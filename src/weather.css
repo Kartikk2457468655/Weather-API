@@ -1,0 +1,76 @@
+/* Weather Component Styles */
+
+.weather-container {
+  text-align: center;
+}
+
+.weather-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.weather-input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.weather-input .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background-color: #f8fafc;
+  color: #1e293b;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.weather-input .MuiOutlinedInput-root:hover {
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+}
+
+.weather-input .MuiOutlinedInput-root.Mui-focused {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border: 2px solid #3b82f6;
+}
+
+.weather-input .MuiOutlinedInput-root fieldset {
+  border: none;
+}
+
+.weather-input .MuiInputLabel-root {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.weather-input .MuiInputLabel-root.Mui-focused {
+  color: #3b82f6;
+}
+
+.weather-input .MuiInputBase-input {
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.weather-input .MuiInputBase-input::placeholder {
+  color: #94a3b8;
+}
+
+.weather-button {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 12px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.weather-button:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
