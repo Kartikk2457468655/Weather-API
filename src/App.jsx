@@ -12,11 +12,10 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
       <div className="WeatherS">
         <Weather onWeatherDataUpdate={handleWeatherDataUpdate} />
       </div>
-      <br />
       <div className="DetailsS">
         <Details weatherData={weatherData} />
       </div>

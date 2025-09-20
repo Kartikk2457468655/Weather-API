@@ -1,5 +1,6 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import "./weather.css";
 import { useState } from 'react';
 
 export default function Weather({ onWeatherDataUpdate }) {
@@ -11,14 +12,14 @@ export default function Weather({ onWeatherDataUpdate }) {
         e.preventDefault();
 
         if (city.trim() === "") {
-            alert("Please enter a city name.");
+            alert("Please enter a place name.");
             return;
         }
 
         try {
             let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
             if (!response.ok) {
-                throw new Error("City not found or API error.");
+                throw new Error("Place not found or API error.");
             }
             let data = await response.json();
             console.log("Raw API data:", data);
@@ -47,13 +48,28 @@ export default function Weather({ onWeatherDataUpdate }) {
     }
 
     return (
-        <div>
-            <h1>Search for weather</h1>
-            <form onSubmit={handleSubmit}>
-                <TextField id="city" label="Enter city name" variant="outlined" value={city} onChange={handleChange} />
+        <div className="weather-container">
+            <h1>🌤️ Weather Forecast</h1>
+            <form onSubmit={handleSubmit} className="weather-form">
+                <TextField 
+                    id="city" 
+                    label="Enter place name" 
+                    variant="outlined" 
+                    value={city} 
+                    onChange={handleChange}
+                    className="weather-input"
+                    fullWidth
+                />
                 <br />
                 <br />
-                <Button variant="contained" type="submit">Get Weather</Button>
+                <Button 
+                    variant="contained" 
+                    type="submit"
+                    className="weather-button"
+                    fullWidth
+                >
+                    🔍 Get Weather
+                </Button>
             </form>
         </div>
     )
